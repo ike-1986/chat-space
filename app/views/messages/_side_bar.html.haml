@@ -13,14 +13,8 @@
   .GroupList
     - current_user.groups.each do |group|
       .Group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group__name
-            鈴木グループ
+            = group.name
           .Group__message
-            メッセージはありません
-      .Group
-        = link_to '#' do
-          .Group__name
-            池田グループ
-          .Group__message
-            メッセージはありません
+            = group.show_last_message
